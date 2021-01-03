@@ -249,6 +249,30 @@ in
         in
           get_ith_element(t1m1, index)
         end
+        // let
+        //   val t1m1 = trans01(t0m1)
+        //   fun get_ith_element(t0: t1erm, i: int): t1erm = 
+        //   (
+        //     let
+        //     in
+        //       if i>0 
+        //       then get_ith_element(t1erm_snd(t0), i-1)
+        //       else t1erm_fst(t0)
+        //     end
+        //   )
+        // in
+        //   if i0 = 0 
+        //   then t1m1
+        //   else 
+        //     if i0 = 1
+        //     then 
+        //     let
+        //       val () = println! (t1m1)
+        //     in
+        //       t1erm_nil()
+        //     end
+        //     else get_ith_element(t1m1, i0)
+        // end
       )
       | T0Manno(t0m1, t0p1) => 
       (

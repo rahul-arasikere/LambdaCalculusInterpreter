@@ -4,7 +4,8 @@
 #
 ######
 
-PATSCC=patscc
+PATSCC=$(PATSHOME)/bin/patscc
+PATSOPT=$(PATSHOME)/bin/patsopt
 
 ######
 XANADU=\
@@ -54,7 +55,7 @@ project_emitter_dats.o
 ######
 
 lambda : \
-main.dats $(OBJECTS) ; \
+main.dats $(OBJECTS) libxatsopt ; \
 $(PATSCC) -o $@ \
 $(INCLUDE) $(CFLAGS) \
 $< $(OBJECTS) -L$(XANADU)/lib -lxatsopt -lgc
@@ -86,11 +87,6 @@ clean:: ; rm -f *_?ats.c
 clean:: ; rm -f *_?ats.o
 clean:: ; rm -f lambda
 clean:: ; $(MAKE) -C TEST clean
-clean:: ; (cd $(XANADU); $(MAKE) -C srcgen/xats clean)
-
-######
-
-cleanall:: clean
-cleanall:: ; rm -f lambda
+clean:: ; (cd $(XANADU); $(MAKE) -C srcgen/xats cleanall)
 
 ###### end of [Makefile] ######
