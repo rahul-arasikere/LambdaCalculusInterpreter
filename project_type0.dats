@@ -1,14 +1,8 @@
-(* ****** ****** *)
+#include "share/atspre_staload.hats"
+
 #staload "./project.sats"
-(* ****** ****** *)
-#include
-"share/atspre_staload.hats"
-(* ****** ****** *)
-#staload
-"./../../mylib/mylib.sats"
-#staload
-"./../../mylib/mylib.dats"
-(* ****** ****** *)
+#staload "./mylib.sats"
+
 
 implement print_type0(tm) = fprint_type0(stdout_ref, tm)
 

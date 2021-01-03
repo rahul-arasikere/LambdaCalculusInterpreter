@@ -1,14 +1,7 @@
-(* ****** ****** *)
+#include "share/atspre_staload.hats"
+
 #staload "./project.sats"
-(* ****** ****** *)
-#include
-"share/atspre_staload.hats"
-(* ****** ****** *)
-#staload
-"./../../mylib/mylib.sats"
-#staload
-"./../../mylib/mylib.dats"
-(* ****** ****** *)
+#staload "./mylib.sats"
 
 local
   val stamper = stamper_make()

@@ -1,14 +1,8 @@
-(* ****** ****** *)
+#include "share/atspre_staload.hats"
+
 #staload "./project.sats"
-(* ****** ****** *)
-#include
-"share/atspre_staload.hats"
-(* ****** ****** *)
-#staload
-"./../../mylib/mylib.sats"
-#staload
-"./../../mylib/mylib.dats"
-(* ****** ****** *)
+#staload "./mylib.sats"
+
 extern fun trans01_type: type0 -> type1
 (* ****** ****** *)
 

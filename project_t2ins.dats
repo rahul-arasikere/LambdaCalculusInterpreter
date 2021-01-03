@@ -1,19 +1,12 @@
-(* ****** ****** *)
-#staload "./project.sats"
-(* ****** ****** *)
 #include "share/atspre_staload.hats"
 #include "share/atspre_staload_libats_ML.hats"
-(* ****** ****** *)
-#staload
-"./../../mylib/mylib.sats"
-#staload
-"./../../mylib/mylib.dats"
 
-(* ****** ****** *)
+#staload "./project.sats"
+#staload "./mylib.sats"
+
 
 implement fprint_val<t2val> = fprint_t2val
 implement fprint_val<t2ins> = fprint_t2ins
-// implement fprint_val<string> = fprint
 
 local
   #define BUFSZ 128

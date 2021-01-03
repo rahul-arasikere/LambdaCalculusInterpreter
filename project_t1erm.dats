@@ -1,14 +1,8 @@
-(* ****** ****** *)
+#include "share/atspre_staload.hats"
+
 #staload "./project.sats"
-(* ****** ****** *)
-#staload
-"./../../mylib/mylib.sats"
-#staload
-"./../../mylib/mylib.dats"
-(* ****** ****** *)
-#include
-"share/atspre_staload.hats"
-(* ****** ****** *)
+#staload "./mylib.sats"
+
 
 implement fprint_val<t1erm> = fprint_t1erm
 implement fprint_val<t1dcl> = fprint_t1dcl

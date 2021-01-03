@@ -1,14 +1,7 @@
-(* ****** ****** *)
+#include "share/atspre_staload.hats"
+
 #staload "./project.sats"
-(* ****** ****** *)
-#include
-"share/atspre_staload.hats"
-(* ****** ****** *)
-#staload
-"./../../mylib/mylib.sats"
-#staload
-"./../../mylib/mylib.dats"
-(* ****** ****** *)
+#staload "./mylib.sats"
 
 implement s0env_nil() = S0ENV(mylist_nil())
 

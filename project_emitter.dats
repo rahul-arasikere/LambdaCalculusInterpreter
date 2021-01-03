@@ -1,14 +1,9 @@
-(* ****** ****** *)
-#staload "./project.sats"
-(* ****** ****** *)
 #include "share/atspre_staload.hats"
 #include "share/atspre_staload_libats_ML.hats"
-(* ****** ****** *)
-#staload
-"./../../mylib/mylib.sats"
-#staload
-"./../../mylib/mylib.dats"
-(* ****** ****** *)
+
+#staload "./project.sats"
+#staload "./mylib.sats"
+
 local
     fun redefine_t2val(val1: t2val): string =
     (

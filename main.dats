@@ -44,13 +44,11 @@ UN = "prelude/SATS/unsafe.sats"
 //
 #include "./libxatsopt.hats"
 //
-overload
-.name with $SYM.symbol_get_name
+overload .name with $SYM.symbol_get_name
 //
 (* ****** ****** *)
 //
-#staload "./../../mylib/mylib.sats"
-#staload "./../../mylib/mylib.dats"
+#staload "./mylib.sats"
 //
 (* ****** ****** *)
 //
