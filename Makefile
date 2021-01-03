@@ -84,6 +84,7 @@ test:: ; $(MAKE) -C TEST all
 clean:: ; rm -f *~
 clean:: ; rm -f *_?ats.c
 clean:: ; rm -f *_?ats.o
+clean:: ; rm -f lambda
 clean:: ; $(MAKE) -C TEST clean
 clean:: ; (cd $(XANADU); $(MAKE) -C srcgen/xats clean)
 
