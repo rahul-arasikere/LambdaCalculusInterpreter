@@ -2,7 +2,7 @@
 
 #staload "./project.sats"
 #staload "./mylib.sats"
-
+#staload "./mylib.dats"
 
 implement fprint_val<t1erm> = fprint_t1erm
 implement fprint_val<t1dcl> = fprint_t1dcl

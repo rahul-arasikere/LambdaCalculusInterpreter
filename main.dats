@@ -49,6 +49,7 @@ overload .name with $SYM.symbol_get_name
 (* ****** ****** *)
 //
 #staload "./mylib.sats"
+#staload "./mylib.dats"
 //
 (* ****** ****** *)
 //

@@ -3,6 +3,7 @@
 
 #staload "./project.sats"
 #staload "./mylib.sats"
+#staload "./mylib.dats"
 
 
 implement fprint_val<t2val> = fprint_t2val
