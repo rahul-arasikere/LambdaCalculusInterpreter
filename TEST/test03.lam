@@ -23,6 +23,5 @@ fun main() =
   end
 )
 //
-(* ****** ****** *)
 
 (* end of [test03.lam] *)

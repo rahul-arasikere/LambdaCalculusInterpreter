@@ -10,7 +10,6 @@ implement fprint_val<t1erm> =
 implement fprint_val<t1dcl> =
   fprint_t1dcl
 
-(* ****** ****** *)
 implement print_t1erm (t1m) =
   fprint_t1erm(stdout_ref, t1m)
 
@@ -71,7 +70,6 @@ implement fprint_t1erm (out, t1m) =
                                            , ")"
                                            ))
 
-(* ****** ****** *)
 implement print_t1dcl (dcl) =
   fprint_t1dcl(stdout_ref, dcl)
 
@@ -80,7 +78,6 @@ implement fprint_t1dcl (out, dcl) =
     | T1DCL (t1v, t1m) => fprint!(out, "T1DCL(", t1v, ", ", t1m, ")"))
 
 (* end of [fprint_t1dcl] *)
-(* ****** ****** *)
 implement print_t1pgm (pgm) =
   fprint_t1pgm(stdout_ref, pgm)
 
@@ -88,7 +85,6 @@ implement fprint_t1pgm (out, pgm) =
   (case+ pgm of
     | T1PGM (dcls, t1m1) => fprint!(out, "T1PGM(", dcls, "; ", t1m1, ")"))
 
-(* ****** ****** *)
 local
   absimpl t1erm_tbox = $rec{t1erm_type= type1, t1erm_node= t1erm_node}
 in
@@ -106,13 +102,11 @@ in
 end
 
 // end of [local]
-(* ****** ****** *)
 implement t1erm_make1 (node) =
   t1erm_make2(type, node) where
   { val type = type1_new_ext() }
 
 (* end of [t1erm_make1] *)
-(* ****** ****** *)
 implement t1erm_nil () =
   t1erm_make2(T1Pnil, T1Mnil())
 
@@ -171,6 +165,4 @@ implement t1erm_opr2 (opr, t1m1, t1m2) =
       | _ => t1erm_make2(t1m1.type(), T1Mopr2(opr, t1m1, t1m2))
   end)
 
-(* ****** ****** *)
-(* ****** ****** *)
 (* end of [project_t1erm.dats] *)

@@ -7,15 +7,12 @@ libxatsopt_dynloadall();
 (* %{^ *)
 val () = $extfcall(void, "libxatsopt_dynloadall")
 
-(* ****** ****** *)
 #include "share/atspre_staload.hats"
 
 #staload UN = "prelude/SATS/unsafe.sats"
 
-(* ****** ****** *)
 #staload "./project.sats"
 
-(* ****** ****** *)
 #dynload "./project_stamp.dats"
 #dynload "./project_type0.dats"
 #dynload "./project_t0erm.dats"
@@ -33,37 +30,29 @@ val () = $extfcall(void, "libxatsopt_dynloadall")
 #dynload "./project_tinfer.dats"
 #dynload "./project_emitter.dats"
 
-(* ****** ****** *)
 #include "./libxatsopt.hats"
 
 overload .name with $SYM.symbol_get_name
 
-(* ****** ****** *)
 #staload "./mylib.sats"
 #staload "./mylib.dats"
 
-(* ****** ****** *)
 extern
 fun xatsopt_strunq(source : string) : string =
   "ext#xatsopt_strunq"
 
-(* ****** ****** *)
 extern
 fun the_fixity_load(XATSHOME : string) : void =
   "ext#libxatsopt_the_fixity_load"
 
-(* ****** ****** *)
 #define mylist_sing(x0) mylist_cons(x0, mylist_nil())
 
-(* ****** ****** *)
 fun T0Pnil()=
   T0Pbas("nil")
 
-(* ****** ****** *)
 fun T0Mseqn(t0m1 : t0erm, t0m2 : t0erm) : t0erm =
   T0Mlet(mylist_sing(T0DCL("_", t0m1)), t0m2)
 
-(* ****** ****** *)
 extern
 fun s1exp2type0 : s1exp -> type0
 
@@ -73,7 +62,6 @@ fun s1exp2type0_lst : s1explst -> type0lst
 extern
 fun s1exp2type0_opt : s1expopt -> type0opt
 
-(* ****** ****** *)
 extern
 fun d1exp2t0erm : d1exp -> t0erm
 
@@ -86,14 +74,12 @@ fun d1exp2t0erm_lst : d1explst -> t0ermlst
 extern
 fun d1exp2t0erm_opt : d1expopt -> t0ermopt
 
-(* ****** ****** *)
 extern
 fun d1ecl2t0dcl_lst : d1eclist -> t0dclist
 
 extern
 fun d1ecl2t0erm_main : d1eclist -> t0ermopt
 
-(* ****** ****** *)
 local
   typedef tpcnm = string
   
@@ -167,7 +153,6 @@ in
       | S1Eapp2 _ => auxapp2(s1e0))
 end
 
-(* ****** ****** *)
 implement s1exp2type0_lst (s1es) =
   (case+ s1es of
     | list_nil() => mylist_nil()
@@ -180,7 +165,6 @@ implement s1exp2type0_opt (opt0) =
     | None() => myoptn_nil()
     | Some (s1e) => myoptn_cons(s1exp2type0(s1e)))
 
-(* ****** ****** *)
 local
   fun auxarg(f1as : f1arglst) : t0var =
     let
@@ -221,7 +205,6 @@ in
     auxanno(f1as)
 end
 
-(* ****** ****** *)
 local
   val the_oprnm_lst =
     $list{string}
@@ -445,7 +428,6 @@ in
     end
 end
 
-(* ****** ****** *)
 implement d1exp2t0erm_seq (d1es) =
   (case+ d1es of
     | list_nil() => T0Mnil()
@@ -460,7 +442,6 @@ implement d1exp2t0erm_seq (d1es) =
       end }
 
 (* end of [d1exp2t0erm_seq] *)
-(* ****** ****** *)
 implement d1exp2t0erm_lst (d1es) =
   (case+ d1es of
     | list_nil() => mylist_nil()
@@ -473,7 +454,6 @@ implement d1exp2t0erm_opt (opt0) =
     | None() => myoptn_nil()
     | Some (d1e) => myoptn_cons(d1exp2t0erm(d1e)))
 
-(* ****** ****** *)
 local
   fun auxv1d0(v1d0 : v1aldecl) : t0dcl =
     let
@@ -581,7 +561,6 @@ in
   (* end of [d1ecl2t0erm_main] *)
 end
 
-(* ****** ****** *)
 implement main0 (argc, argv) =
   (if (argc >= 2) then
     project_main0(argc, argv)
@@ -589,14 +568,12 @@ implement main0 (argc, argv) =
     prerrln!("Hello from CS525(project)!"))
 
 (* end of [main] *)
-(* ****** ****** *)
 implement fprint_val<t0dcl> =
   fprint_t0dcl
 
 implement fprint_val<t0erm> =
   fprint_t0erm
 
-(* ****** ****** *)
 local
   static
   fun process_stdin() : void
@@ -607,8 +584,7 @@ local
   static
   fun process_given(given : string) : void
   
-  (* ****** ****** *)
-  implement process_stdin () =
+    implement process_stdin () =
     (process_fpath(fp0, "")) where
     { val fp0 = $FP0.the_filpath_stdin }
   
@@ -678,5 +654,4 @@ in
     end
 end
 
-(* ****** ****** *)
 (* end of [project_main.dats] *)

@@ -11,11 +11,9 @@ in
 end
 
 // end of [local]
-(* ****** ****** *)
 implement print_t1var (t1v) =
   fprint_t1var(stdout_ref, t1v)
 
-(* ****** ****** *)
 local
   absimpl t1var_type =
     $rec
@@ -59,5 +57,4 @@ in
 end
 
 // end of [local]
-(* ****** ****** *)
 (* end of [project_t1var.dats] *)

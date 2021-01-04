@@ -6,7 +6,6 @@
 implement print_value (x0) =
   fprint_value(stdout_ref, x0)
 
-(* ****** ****** *)
 implement fprint_value (out, x0) =
   (case+ x0 of
     | VALnil() => fprint!(out, "VALnil(", ")")
@@ -64,8 +63,7 @@ local
     end
   
   // end of [aux_app]
-  (* ****** ****** *)
-  fun aux_cond(t1m0 : t1erm, env0 : d1env) : value =
+    fun aux_cond(t1m0 : t1erm, env0 : d1env) : value =
     let
       val- T1Mcond (t1, t2, t3) = t1m0.node()
       val v1 = t1erm_interp1(t1, env0)
@@ -78,8 +76,7 @@ local
     end
   
   // end of [aux_cond]
-  (* ****** ****** *)
-  fun aux_opr1(t1m0 : t1erm, env0 : d1env) : value =
+    fun aux_opr1(t1m0 : t1erm, env0 : d1env) : value =
     let
       val- T1Mopr1 (opr, t1) = t1m0.node()
       val v1 = t1erm_interp1(t1, env0)
@@ -116,8 +113,7 @@ local
     end
   
   // end of [aux_opr2]
-  (* ****** ****** *)
-  fun aux_opr2(t1m0 : t1erm, env0 : d1env) : value =
+    fun aux_opr2(t1m0 : t1erm, env0 : d1env) : value =
     let
       val- T1Mopr2 (opr, t1, t2) = t1m0.node()
       val v1 = t1erm_interp1(t1, env0)

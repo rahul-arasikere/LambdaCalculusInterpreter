@@ -1,8 +1,6 @@
-(* ****** ****** *)
 
 val theCoins = (1, (5, (10, 25)))
 
-(* ****** ****** *)
 
 val coin_get = lam(n: int): int =>
 (
@@ -15,7 +13,6 @@ val coin_get = lam(n: int): int =>
   if n = 3 then ((theCoins.1).1).1 else -1(*err*)
 ) (* end of [coin_get] *)
 
-(* ****** ****** *)
 
 fun main() =
 //
@@ -44,6 +41,5 @@ in
   end
 end // coin_change
 //
-(* ****** ****** *)
 
 (* end of [coin_change.lam] *)

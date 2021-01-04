@@ -149,5 +149,4 @@ implement t1pgm_tinfer (tpgm) =
     t1erm_tinfer(t1m0)
   end)
 
-(* ****** ****** *)
 (* end of [project_tinfer.dats] *)

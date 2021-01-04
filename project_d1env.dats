@@ -14,7 +14,6 @@ implement d1env_extend (env, x0, tm) =
   end
 
 // end of [s0env_extend]
-(* ****** ****** *)
 implement d1env_search (env, x0) =
   auxlst(xts) where
   { val- D1ENV(xts) = env

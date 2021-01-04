@@ -15,7 +15,6 @@ implement T1Pbool =
 implement T1Pstring =
   T1Pbas("string")
 
-(* ****** ****** *)
 implement type1_new_ext () =
   T1Pext(tpext_new())
 
@@ -48,11 +47,9 @@ in
         | _ => auxtype(t1p1, t1p2)))
 end
 
-(* ****** ****** *)
 implement print_type1 (tm) =
   fprint_type1(stdout_ref, tm)
 
-(* ****** ****** *)
 implement fprint_type1 (out, tm) =
   (case- tm of
     | T1Pbas (nam) => fprint!(out, "T1Pbas(", nam, ")")
@@ -60,5 +57,4 @@ implement fprint_type1 (out, tm) =
     | T1Ptup (tp1, tp2) => fprint!(out, "T1Ptup(", tp1, ", ", tp2, ")")
     | T1Pext (X0) => fprint!(out, "T1Pext(", X0, ")"))
 
-(* ****** ****** *)
 (* end of [project_type1.dats] *)

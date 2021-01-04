@@ -11,18 +11,15 @@ in
 end
 
 // end of [local]
-(* ****** ****** *)
 implement print_tpext (X0) =
   fprint_tpext(stdout_ref, X0)
 
-(* ****** ****** *)
 absimpl tpext_type =
   $rec
   {
     tpext_stamp= stamp,
     tpext_value= ref(t1opt)
   }
-(* ****** ****** *)
 implement tpext_get (X) =
   let
     val r = X.tpext_value
@@ -37,7 +34,6 @@ implement tpext_set (X, tp) =
     (r[] := myoptn_cons(tp))
   end
 
-(* ****** ****** *)
 implement tpext_new () =
   $rec
   {
@@ -48,7 +44,6 @@ implement tpext_new () =
   {
     val stamp = tpext_stamp()
   }
-(* ****** ****** *)
 implement fprint_tpext (out, X) =
   let
     val r = X.tpext_value
@@ -59,5 +54,4 @@ implement fprint_tpext (out, X) =
       | myoptn_cons (def) => fprint!(out, "X(", s, ")[", def, "]")
   end
 
-(* ****** ****** *)
 (* end of [project_tpext.dats] *)

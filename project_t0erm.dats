@@ -10,7 +10,6 @@ implement fprint_val<t0erm> =
 implement fprint_val<t0dcl> =
   fprint_t0dcl
 
-(* ****** ****** *)
 implement print_t0erm (tm) =
   fprint_t0erm(stdout_ref, tm)
 
@@ -63,7 +62,6 @@ implement fprint_t0erm (out, tm0) =
                                         )
     | T0Manno (tm1, tp2) => fprint!(out, "T0Manno(", tm1, ", ", tp2, ")"))
 
-(* ****** ****** *)
 implement print_t0dcl (tm) =
   fprint_t0dcl(stdout_ref, tm)
 
@@ -71,7 +69,6 @@ implement fprint_t0dcl (out, tdcl) =
   (case+ tdcl of
     | T0DCL (x0, def) => fprint!(out, "T0DCL(", x0, ", ", def, ")"))
 
-(* ****** ****** *)
 implement print_t0pgm (pgm) =
   fprint_t0pgm(stdout_ref, pgm)
 
@@ -79,5 +76,4 @@ implement fprint_t0pgm (out, pgm) =
   (case+ pgm of
     | T0PGM (dcls, t0m1) => fprint!(out, "T0PGM(", dcls, "; ", t0m1, ")"))
 
-(* ****** ****** *)
 (* end of [project_t0erm.dats] *)
