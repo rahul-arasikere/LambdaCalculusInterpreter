@@ -14,9 +14,9 @@ typedef tpnam = string
 datatype type0 =
   | T0Pbas of tpnam
   | T0Pfun of (type0, type0)
-  | T0Ptup of (type0, type0)   where type0lst  = mylist(type0)
-and type0opt =
-  | myoptn(type0)
+  | T0Ptup of (type0, type0)   
+where type0lst = mylist(type0)
+and type0opt = myoptn(type0)
 
 (* ****** ****** *)
 val T0Pnil: type0
@@ -61,12 +61,10 @@ and t0erm =
   | T0Mtup of (t0ermlst)
   | T0Mprj of (t0erm, int)
   | T0Manno of (t0erm, type0)
-  | T0Mcond of (t0erm, t0erm, t0ermopt)   where
-                                          t0dclist  = mylist(t0dcl)
-and t0ermlst =
-  | mylist(t0erm)
-and t0ermopt =
-  | myoptn(t0erm)
+  | T0Mcond of (t0erm, t0erm, t0ermopt)   
+where t0dclist  = mylist(t0dcl)
+and t0ermlst = mylist(t0erm)
+and t0ermopt = myoptn(t0erm)
 
 (* ****** ****** *)
 fun print_t0pgm(xs : t0pgm) : void
@@ -117,9 +115,9 @@ datatype type1 =
   | T1Pbas of tpnam
   | T1Pfun of (type1, type1)
   | T1Ptup of (type1, type1)
-  | T1Pext of tpext   where type1lst  = mylist(type1)
-and type1opt =
-  | myoptn(type1)
+  | T1Pext of tpext   
+where type1lst = mylist(type1)
+and type1opt = myoptn(type1)
 
 (* ****** ****** *)
 fun tpext_new() : tpext
@@ -150,10 +148,10 @@ overload .get with tpext_get
 overload .set with tpext_set
 
 (* ****** ****** *)
-// abstflt stamp_type = int
+abstflt stamp_type = int
 typedef stamp = stamp_type
 
-// abstbox stamper_type = ptr
+abstbox stamper_type = ptr
 typedef stamper = stamper_type
 
 (* ****** ****** *)
@@ -218,11 +216,10 @@ and t1erm_node =
   | T1Msnd of (t1erm)
   | T1Mtup of (t1erm, t1erm)
   | T1Manno of (t1erm, type1)
-  | T1Mcond of (t1erm, t1erm, t1erm)   where t1dclist  = mylist(t1dcl)
-and t1ermlst =
-  | mylist(t1erm)
-and t1ermopt =
-  | myoptn(t1erm)
+  | T1Mcond of (t1erm, t1erm, t1erm)   
+where t1dclist  = mylist(t1dcl)
+and t1ermlst = mylist(t1erm)
+and t1ermopt = myoptn(t1erm)
 
 (* ****** ****** *)
 fun t1erm_get_node(t1erm) : t1erm_node
@@ -400,10 +397,9 @@ datatype t2ins =
   | T2INSfst of (t2tmp, t2val)
   | T2INSsnd of (t2tmp, t2val)
   | T2INScall of (t2tmp, t2val, t2val)
-  | T2INScond of (t2tmp, t2val, t2inslst, t2inslst)   where
-                                                      t2inslst  = mylist(t2ins)
-and t2valist =
-  | mylist(t2val)
+  | T2INScond of (t2tmp, t2val, t2inslst, t2inslst)   
+where t2inslst  = mylist(t2ins)
+and t2valist = mylist(t2val)
 
 (* ****** ****** *)
 fun print_t2ins(t2ins) : void

@@ -70,7 +70,9 @@ implement trans12_term (env, t1m0) =
         val new_env = C2ENVmark(get_mark(env) + 1, env)
         val (new_env, inssdcl) = trans12_tdclst(new_env, t1dclst)
         val (inss1, val1) = trans12_term(new_env, t1m1)
-      in end)
+      in 
+        (inssdcl+inss1, T2Vtmp(tmp))
+      end)
       | T1Mopr1 (opr, t1m1) => (let
         val tmp = t2tmp_new()
         val (ins1, val1) = trans12(t1m1)

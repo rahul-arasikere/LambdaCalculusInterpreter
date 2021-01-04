@@ -47,7 +47,7 @@ implement tpext_new () =
   where
   {
     val stamp = tpext_stamp()
-// }
+  }
 (* ****** ****** *)
 implement fprint_tpext (out, X) =
   let
